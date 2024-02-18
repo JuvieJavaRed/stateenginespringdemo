@@ -49,7 +49,7 @@ public class SimpleEnumStateMachineConfiguration extends StateMachineConfigurerA
                     public void execute(StateContext<OrderStates, OrderEvents> stateContext) {
                         log.info("We are now in the paid state");
                         StateRequestDto stateRequestDto = (StateRequestDto) stateContext.getExtendedState().getVariables().get("stateObject");
-                        log.info("The passed state object in PAID has the state name of : "+stateRequestDto.getProductName());
+                        log.info("The passed state object has the state name of : "+stateRequestDto.getProductName());
                     }
                 })
                 .end(OrderStates.FULFILLED)
